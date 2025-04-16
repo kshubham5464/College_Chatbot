@@ -1,0 +1,223 @@
+[
+  {
+    "question": "Hello",
+    "answer": "Hi there! How can I help you?"
+  },
+  {
+    "question": "what is the admission process?",
+    "answer": "You can apply online through our official college portal. \n Admissions open in June every year.\n Please check the website for more details."
+  },
+  {
+    "question": "what are the college timings?",
+    "answer": "College hours are from 9 AM to 4 PM, Monday to Friday. Please note that timings may vary on weekends and holidays. Check the college calendar for more information."
+  },
+  {
+    "question": "is there a hostel facility?",
+    "answer": "Yes, we provide separate hostel facilities for both boys and girls. The hostel is equipped with all the necessary amenities and is located within the college premises. Please contact the college administration for more details."
+  },
+  {
+    "question": "does the college provide placement opportunity?",
+    "answer": "Yes, we have a dedicated placement cell that conducts drives and prepares students. Our students have been placed in top companies in the past like Autodesk, Delloite, and many more. Please check the college website for more information @ www.saitm.ac.in."
+  },
+  {
+    "question": "what courses are offered?",
+    "answer": "We offer Btech, BCA, BBA, M.tech, MCA, MBA, and B.Pharma courses. Please check our website for more details."
+  },
+  {
+    "question": "what is the fee structure for B.Tech?",
+    "answer": "The B.Tech fee structure is INR 1,05,000 per year.This is a 4-year course. Please note that the fee structure may vary for each year. Please check the college website for more details."
+  },
+  {
+    "question": "what is the fee structure for BCA?",
+    "answer": "The BCA fee structure is INR 85,000 per year.This is a 3-year course. Please note that the fee structure may vary for each year. Please check the college website for more details."
+  },
+  {
+    "question": "what is the fee structure for BBA?",
+    "answer": "The BBA fee structure is INR 75,000 per year. This is a 3-year course. Please note that the fee structure may vary for each year. Please check the college website for more details."
+  },
+  {
+    "question": "are scholarships available?",
+    "answer": "Yes, merit and need-based scholarships are available. For above 80% in the board examinations has offered a scholarship of 50% of the tuition fee. Please check out the college website for more scholarship details."
+  },
+  {
+    "question": "how can i apply online?",
+    "answer": "Visit our official site @ www.saitm.ac.in and click on Apply Now. Fill out the form and upload your documents. You will receive a confirmation email once your application is submitted. Please note that the application fee is INR 500. You can pay online through our portal or visit the college office to pay in cash."
+  },
+  {
+    "question": "what documents are required for admission?",
+    "answer": "You need 10th, 12th marksheets,Graduation marksheets(if applicable), ID proof, passport-sized photos, migration Certificate, and any other relevant documents."
+  },
+  {
+    "question": "is there an entrance exam?",
+    "answer": "Yes, for some professional courses an entrance exam is conducted. Please check the college website for more information @ www.saitm.ac.in."
+  },
+  {
+    "question": "what are the eligibility criteria for MBA?",
+    "answer": "Graduation in any discipline with 50% marks is required for MBA."
+  },
+  
+  {
+    "question": "what are the eligibility criteria for B.tech?",
+    "answer": " 12th in discipline with 50% marks is required for B.tech."
+  },
+  {
+    "question": "what are the eligibility criteria for BCA?",
+    "answer": "12th in any discipline with 50% marks is required for BCA."
+  },
+  {
+    "question": "what are the eligibility criteria for BBA?",
+    "answer": "12th in any discipline with 50% marks is required for BBA."
+  },
+  {
+    "question": "does the college provide transport facilities?",
+    "answer": "Yes, we have buses for students coming from nearby towns. Every bus is equipped with GPS and CCTV cameras for the safety of students. The bus fare is INR 2,500 per month."
+  },
+  {
+    "question": "are there any cultural fests?",
+    "answer": "Yes, annual fests and events are organized with student participation. The famous fest in the college is ZEAL which is celebrated with great enthusiasm and participation from students."
+  },
+  {
+    "question": "is there a library facility?",
+    "answer": "Our library has over 10,000 books and a digital resource section. Every students are provided the library card which can be used to borrow books from the library. The library is open from 9:00 AM to 7:00 PM on all working days."
+  },
+  {
+    "question": "are there labs for practicals?",
+    "answer": "Yes, modern labs for CS, Physics, Chemistry, and Electronics are available. All the students are provided with the necessary equipment and software for practicals."
+  },
+  {
+    "question": "what are the sports facilities available?",
+    "answer": "We have a playground, basketball court, and indoor games room. Every student is encouraged to participate in sports and games to maintain a healthy lifestyle. Every semester , sports events are organized with participation from students for the hostel students which are called Hostel Premier League (HPL)."
+  },
+  {
+    "question": "how is the college canteen?",
+    "answer": "The canteen offers hygienic and affordable food options. There are many varieties of snacks, beverages, and desserts available. The canteen is open from 09:00 AM to 9:00 PM on all days."
+  },
+  {
+    "question": "are there guest lectures or workshops?",
+    "answer": "Yes, regular guest lectures and industry workshops are conducted. Every semester , students are taken to industrial visits to enhance their knowledge and skills and also trained by industry experts which is called Industrial Training Program (ITP)."
+  },
+  {
+    "question": "how can i contact the administration?",
+    "answer": "You can call +91-8102309830 or email kshubham5462@gmail.com for queries. You can also visit the college website for more information @ www.saitm.ac.in. Please note that the college is open from 9:00 AM to 7:00 PM on all working days."
+  },
+  {
+    "question": "what is the duration of the MBA course?",
+    "answer": "The MBA course is a 2-year full-time program divided into 4 semesters. Internships and project work are also part of the curriculum."
+  },
+  {
+    "question": "is there any dress code in college?",
+    "answer": "Yes, students are required to follow the dress code. Formal attire is mandatory on weekdays. For specific courses like B.Tech, lab coats or uniforms may be required."
+  },
+  {
+    "question": "are industrial visits organized?",
+    "answer": "Yes, industrial visits are part of the curriculum to give students practical exposure to real-world work environments."
+  },
+  {
+    "question": "what kind of companies visit the campus for placements?",
+    "answer": "Companies from IT, Finance, Marketing, and Core Engineering domains visit the campus. Some notable recruiters include TCS, Wipro, Infosys, Capgemini, and HCL."
+  },
+  {
+    "question": "can international students apply?",
+    "answer": "Yes, international students can apply. Please visit the college website for the detailed admission process and document requirements for international applicants."
+  },
+  {
+    "question": "is wifi available on campus?",
+    "answer": "Yes, the campus is Wi-Fi enabled with high-speed internet available to all students and staff."
+  },
+  {
+    "question": "is there a gym facility for students?",
+    "answer": "Yes, the college has an in-campus gym with modern equipment. It is accessible to students during scheduled hours."
+  },
+  {
+    "question": "how many students are there in a batch?",
+    "answer": "Each course typically has 60 to 120 students per batch, depending on the program and intake capacity."
+  },
+  {
+    "question": "is attendance mandatory?",
+    "answer": "Yes, a minimum of 75% attendance is mandatory to appear for semester examinations, as per college and university norms."
+  },
+  {
+    "question": "are there any student clubs or societies?",
+    "answer": "Yes, the college has several clubs such as Coding Club, Cultural Club, Robotics Club, Drama Society, and Entrepreneurship Cell for student engagement."
+  },
+  {
+    "question": "what is the medium of instruction?",
+    "answer": "The medium of instruction for all courses is English."
+  },
+  {
+    "question": "how can i get my ID card after admission?",
+    "answer": "Once your admission is confirmed and documents are verified, you will receive your student ID card from the admin office within 7 working days."
+  },
+  {
+    "question": "can i change my course after admission?",
+    "answer": "Course changes are subject to availability and eligibility criteria. Please contact the academic office for guidance."
+  },
+  {
+    "question": "are medical facilities available on campus?",
+    "answer": "Yes, a medical room with a qualified nurse and a visiting doctor is available on campus for students and staff."
+  },
+  {
+    "question": "are there internship opportunities?",
+    "answer": "Yes, internship opportunities are provided during summer breaks and are often coordinated through the Training & Placement Cell."
+  },
+  {
+    "question": "is ragging allowed in college?",
+    "answer": "No, ragging is strictly prohibited. Our college follows a zero-tolerance policy towards ragging. An anti-ragging committee is in place to ensure a safe and welcoming environment."
+  },
+  {
+    "question": "can i get a refund if i cancel my admission?",
+    "answer": "Yes, refunds are provided as per AICTE/UGC norms. The refund policy varies depending on when the admission is canceled. Please refer to the admission policy on our website."
+  },
+  {
+    "question": "what is the exam pattern?",
+    "answer": "The semester exam pattern includes internal assessments (30%) and end-semester exams (70%). Some courses may also have viva or practical components."
+  },
+  {
+    "question": "what are the library rules?",
+    "answer": "Students must carry their library cards, maintain silence, and return books on time. A fine is charged for overdue books. Mobile phones are not allowed inside the library."
+  },
+  {
+    "question": "how are internal assessments conducted?",
+    "answer": "Internal assessments are based on class tests, assignments, quizzes, and attendance. These carry 30% weightage in the final evaluation."
+  },
+  {
+    "question": "can i use my laptop in class?",
+    "answer": "Yes, students are allowed to use laptops for academic purposes. Please ensure it does not distract others and follows classroom decorum."
+  },
+  {
+    "question": "how is the hostel food?",
+    "answer": "Hostel food is nutritious and prepared under hygienic conditions. Both vegetarian and non-vegetarian meals are served as per the menu decided by the student committee."
+  },
+  {
+    "question": "what is the process for migration certificate?",
+    "answer": "To get a migration certificate, students must submit an application form with a copy of their ID and last semester's mark sheet to the admin office."
+  },
+  {
+    "question": "what are the working hours of the administration office?",
+    "answer": "The administration office is open from 9:00 AM to 5:00 PM, Monday to Saturday. It remains closed on Sundays and public holidays."
+  },
+  {
+    "question": "is there any parent-teacher interaction?",
+    "answer": "Yes, parent-teacher meetings are held every semester to discuss student performance, attendance, and overall progress."
+  },
+  {
+    "question": "what are the hostel rules?",
+    "answer": "Hostel rules include fixed entry and exit times, no loud music, maintaining cleanliness, and respecting wardens and fellow students. Detailed guidelines are provided at the time of hostel allotment."
+  },
+  {
+    "question": "how can i pay my semester fees?",
+    "answer": "Semester fees can be paid online through the student portal or via bank draft at the college accounts office. Payment receipts are generated instantly."
+  },
+  {
+    "question": "what are the specializations available in MBA?",
+    "answer": "MBA specializations include Marketing, Finance, Human Resource, Business Analytics, and Operations. Please refer to the MBA program page for curriculum details."
+  },
+  {
+    "question": "are night study hours available in the hostel?",
+    "answer": "Yes, study halls in hostels remain open till midnight for students who wish to study at night."
+  },
+  {
+    "question": "can students organize their own events?",
+    "answer": "Yes, students are encouraged to organize events and activities with prior approval from the faculty coordinator and student council."
+  }
+]
