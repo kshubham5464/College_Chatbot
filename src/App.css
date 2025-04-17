@@ -10,6 +10,30 @@
   background: #f9f9f9;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
+/* App.css */
+
+.App {
+  text-align: center;
+  padding: 10px;
+}
+
+.chatbot-image {
+  width: 100px; /* Adjust the width to fit your logo size */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Adds some space between the logo and the heading */
+  border-radius: 100px; /* Optional: rounded corners */
+  float: left;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
 .chatbot-header {
   display: flex;
   align-items: center;

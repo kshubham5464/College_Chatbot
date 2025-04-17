@@ -4,6 +4,10 @@
     "answer": "Hi there! How can I help you?"
   },
   {
+    "question": "What is the total Campus area?",
+    "answer": "The total campus area is 22 acres."
+  },
+  {
     "question": "what is the admission process?",
     "answer": "You can apply online through our official college portal. \n Admissions open in June every year.\n Please check the website for more details."
   },
@@ -185,7 +189,7 @@
     "answer": "Yes, students are allowed to use laptops for academic purposes. Please ensure it does not distract others and follows classroom decorum."
   },
   {
-    "question": "how is the hostel food?",
+    "question": "how is the hostel or mess food?",
     "answer": "Hostel food is nutritious and prepared under hygienic conditions. Both vegetarian and non-vegetarian meals are served as per the menu decided by the student committee."
   },
   {

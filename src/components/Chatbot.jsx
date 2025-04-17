@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ChatWindow from './ChatWindow';
 import InputBox from './InputBox';
 import { getBotResponse } from '../services/chatbotServices';
@@ -7,8 +7,9 @@ import logo from '../assets/logo.jpg';
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  //Voice function (TTS)
+  const voiceTriggeredRef = useRef(false); // ✅ Track mic usage
+  //  
+  //  // Voice function (TTS)
   const speak = (text) => {
     const synth = window.speechSynthesis;
     const utter = new SpeechSynthesisUtterance(text);
@@ -44,11 +45,13 @@ const Chatbot = () => {
       const botResponse = await getBotResponse(userInput);
       const botMessage = { sender: 'bot', text: botResponse };
 
-      // Only one setMessages here
       setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
 
-      // Voice reply
-      speak(botResponse);
+      // ✅ Only speak if mic was used
+      if (voiceTriggeredRef.current) {
+        speak(botResponse);
+        voiceTriggeredRef.current = false; // reset
+      }
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -56,7 +59,6 @@ const Chatbot = () => {
     }
   };
 
-  // ✅ Clear chat button
   const handleClearChat = () => {
     localStorage.removeItem('chatMessages');
     setMessages([{ sender: 'bot', text: 'Hello, how can I assist you?' }]);
@@ -70,7 +72,11 @@ const Chatbot = () => {
       </div>
 
       <ChatWindow messages={messages} loading={loading} />
-      <InputBox onSend={handleSendMessage} disabled={loading} />
+      <InputBox
+        onSend={handleSendMessage}
+        disabled={loading}
+        voiceTriggeredRef={voiceTriggeredRef} // ✅ Pass it down
+      />
     </div>
   );
 };
