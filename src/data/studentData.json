@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Hello",
+    "answer": "Hi there, fellow student! 🎓 How can I help you with your academic journey today?"
+  },
+  {
+    "question": "Hi",
+    "answer": "Hey! 👋 Ready to tackle some academic questions? I'm here to help!"
+  },
+  {
+    "question": "what are my course options",
+    "answer": "As a student, you can choose from:\n• B.Tech (4 years) - Engineering specializations\n• BCA (3 years) - Computer Applications\n• BBA (3 years) - Business Administration\n• M.Tech (2 years) - Advanced Engineering\n• MCA (2 years) - Master in Computer Applications\n• MBA (2 years) - Business Management\n• B.Pharma (4 years) - Pharmaceutical Sciences\n\n💡 Check your student portal for course registration deadlines!"
+  },
+  {
+    "question": "how to access student portal",
+    "answer": "To access your student portal:\n1. Visit www.saitm.ac.in\n2. Click on 'Student Login'\n3. Use your enrollment number and password\n4. If you forgot your password, use the 'Forgot Password' option\n\n📱 You can also download our mobile app for easier access!"
+  },
+  {
+    "question": "what are the exam schedules",
+    "answer": "Exam schedules are typically:\n• Mid-semester exams: Week 8-9 of each semester\n• End-semester exams: Week 16-17\n• Supplementary exams: Usually 2 weeks after results\n\n📅 Check your student portal for exact dates and your personalized exam timetable. Don't forget - 75% attendance is mandatory to appear for exams!"
+  },
+  {
+    "question": "how to check my grades",
+    "answer": "To check your grades:\n1. Login to student portal\n2. Go to 'Academic' section\n3. Click on 'Results/Grades'\n4. Select the semester\n\n📊 You can also download your grade sheets and transcripts from there. If you have any discrepancies, contact the academic office within 15 days of result declaration."
+  },
+  {
+    "question": "library timings",
+    "answer": "Library hours for students:\n• Monday-Friday: 9:00 AM - 9:00 PM\n• Saturday: 9:00 AM - 6:00 PM\n• Sunday: 10:00 AM - 4:00 PM\n\n📚 Your student ID card is your library card. You can borrow up to 5 books for 15 days. Digital resources are available 24/7 through the online portal!"
+  },
+  {
+    "question": "hostel facilities",
+    "answer": "Student hostel facilities:\n• Separate hostels for boys and girls\n• 2-3 students per room with attached bathrooms\n• Wi-Fi connectivity throughout\n• Common room with TV and games\n• Study halls open till midnight\n• Mess with nutritious meals\n• Laundry facilities\n• 24/7 security\n\n🏠 Hostel fee: ₹2,500/month. Apply through student portal during admission."
+  },
+  {
+    "question": "how to join clubs",
+    "answer": "Student clubs you can join:\n• Coding Club - Programming competitions\n• Cultural Club - Dance, music, drama\n• Robotics Club - Tech projects\n• Sports Club - Various sports activities\n• Entrepreneurship Cell - Business ideas\n• Literary Club - Writing and debates\n\n🎯 Registration opens at the beginning of each semester. Check notice boards or student portal for announcements!"
+  },
+  {
+    "question": "internship opportunities",
+    "answer": "Internship support for students:\n• Summer internships coordinated by T&P Cell\n• Industry partnerships with 50+ companies\n• Internship fair every semester\n• Credit-based internships available\n• Stipend range: ₹5,000-₹25,000/month\n\n💼 Upload your resume on the placement portal and attend pre-internship training sessions!"
+  },
+  {
+    "question": "attendance requirements",
+    "answer": "Attendance policy for students:\n• Minimum 75% attendance required for each subject\n• Below 75%: Cannot appear for end-semester exams\n• Medical leave: Submit medical certificate within 3 days\n• Attendance tracked through biometric system\n\n⚠️ Check your attendance regularly on the student portal. If you're falling short, meet your faculty advisor immediately!"
+  },
+  {
+    "question": "fee payment",
+    "answer": "Student fee payment options:\n• Online: Through student portal (recommended)\n• Bank draft: Payable to 'SAITM'\n• Cash: At accounts office (9 AM - 5 PM)\n• Installments: Available with prior approval\n\n💳 Late fee: ₹500 after due date. Keep payment receipts safe for future reference!"
+  },
+  {
+    "question": "placement preparation",
+    "answer": "Placement preparation resources:\n• Resume building workshops\n• Mock interviews every month\n• Aptitude test practice sessions\n• Soft skills training\n• Technical interview preparation\n• Group discussion practice\n• Industry expert guest lectures\n\n🎯 Start preparing from 3rd year! Register with T&P Cell and maintain good academic records."
+  },
+  {
+    "question": "campus wifi",
+    "answer": "Campus Wi-Fi for students:\n• Network: SAITM_Student\n• Login with your enrollment number\n• Speed: Up to 100 Mbps\n• Available in all academic buildings, hostels, and common areas\n• Data limit: 5GB per day\n\n📶 For connectivity issues, contact IT helpdesk at ext. 234 or visit the computer center."
+  },
+  {
+    "question": "medical facilities",
+    "answer": "Medical facilities on campus:\n• Medical room with qualified nurse (9 AM - 6 PM)\n• Visiting doctor: Mon, Wed, Fri (2 PM - 4 PM)\n• First aid available 24/7 in hostels\n• Tie-up with nearby hospital for emergencies\n• Health insurance coverage available\n\n🏥 For emergencies, contact security at 9876543210. Keep your student ID for medical services."
+  },
+  {
+    "question": "sports facilities",
+    "answer": "Sports facilities for students:\n• Cricket ground and basketball court\n• Indoor games: Table tennis, badminton, chess\n• Gym with modern equipment (6 AM - 8 PM)\n• Swimming pool (seasonal)\n• Annual sports fest: SPORTANZA\n• Inter-hostel competitions: HPL (Hostel Premier League)\n\n🏆 Sports quota available for exceptional athletes. Contact sports coordinator for trials!"
+  },
+  {
+    "question": "academic support",
+    "answer": "Academic support available:\n• Faculty mentorship program\n• Peer tutoring sessions\n• Study groups formation\n• Extra classes for weak students\n• Academic counseling\n• Career guidance sessions\n• Research project opportunities\n\n📖 Don't hesitate to approach your faculty advisor or seniors for help. We're all here to support your success!"
+  },
+  {
+    "question": "transport facilities",
+    "answer": "Student transport options:\n• College buses from major nearby towns\n• GPS tracking and CCTV for safety\n• Monthly pass: ₹2,500\n• Daily pass: ₹100\n• Routes cover 15+ locations\n• Timings: 7:30 AM pickup, 5:30 PM return\n\n🚌 Apply for bus pass during admission or at transport office. Carry your student ID while traveling."
+  },
+  {
+    "question": "cultural events",
+    "answer": "Cultural events for students:\n• ZEAL - Annual cultural fest (3 days)\n• Freshers' welcome party\n• Farewell for final year students\n• Festival celebrations (Diwali, Holi, etc.)\n• Talent shows and competitions\n• Celebrity performances and DJ nights\n\n🎭 Participate actively! It's a great way to showcase your talents and make memories. Follow @SAITMCultural on social media for updates!"
+  },
+  {
+    "question": "grievance redressal",
+    "answer": "Student grievance system:\n• Online grievance portal on student website\n• Grievance committee meets weekly\n• Anonymous complaint box in main building\n• Student representatives in academic committees\n• Anti-ragging committee for safety issues\n• Response within 7 working days guaranteed\n\n📝 Your voice matters! Don't hesitate to raise genuine concerns for campus improvement."
+  }
+]
