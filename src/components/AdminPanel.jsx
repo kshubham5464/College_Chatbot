@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AIAnalytics from './AIAnalytics';
-import { 
-  Settings, 
-  Users, 
-  MessageSquare, 
-  Database, 
-  Activity, 
-  Shield, 
-  Edit3, 
-  Trash2, 
-  Plus, 
+import {
+  Settings,
+  Users,
+  MessageSquare,
+  Database,
+  Activity,
+  Shield,
+  Edit3,
+  Trash2,
+  Plus,
   X,
   Search,
   Download,
@@ -32,14 +32,12 @@ const AdminPanel = ({ darkMode, onClose }) => {
   const [bulkMessage, setBulkMessage] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedUsers, setSelectedUsers] = useState([]);
-
-  // Initialize data
   useEffect(() => {
     loadAdminData();
   }, []);
 
   const loadAdminData = () => {
-    // Load users data
+
     const mockUsers = [
       { id: 1, name: 'John Doe', email: 'john@example.com', type: 'student', status: 'active', lastActive: '2024-01-15', queries: 45 },
       { id: 2, name: 'Jane Smith', email: 'jane@example.com', type: 'parent', status: 'active', lastActive: '2024-01-14', queries: 23 },
@@ -48,8 +46,6 @@ const AdminPanel = ({ darkMode, onClose }) => {
       { id: 5, name: 'David Brown', email: 'david@example.com', type: 'parent', status: 'active', lastActive: '2024-01-13', queries: 34 }
     ];
     setUsers(mockUsers);
-
-    // Load responses data
     const mockResponses = [
       { id: 1, question: 'What are the admission requirements?', answer: 'To apply for admission, you need...', category: 'admission', userType: 'visitor', lastUpdated: '2024-01-10' },
       { id: 2, question: 'What is the fee structure?', answer: 'The fee structure for the current academic year...', category: 'fees', userType: 'parent', lastUpdated: '2024-01-12' },
@@ -58,7 +54,6 @@ const AdminPanel = ({ darkMode, onClose }) => {
     ];
     setResponses(mockResponses);
 
-    // Load system stats
     const mockStats = {
       totalUsers: 1247,
       activeUsers: 892,
@@ -130,7 +125,7 @@ const AdminPanel = ({ darkMode, onClose }) => {
       </div>
 
       <div className="responses-grid">
-        {responses.filter(response => 
+        {responses.filter(response =>
           response.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
           response.answer.toLowerCase().includes(searchTerm.toLowerCase())
         ).map(response => (
@@ -260,7 +255,7 @@ const AdminPanel = ({ darkMode, onClose }) => {
             <div className="table-cell">Queries</div>
             <div className="table-cell">Actions</div>
           </div>
-          {users.filter(user => 
+          {users.filter(user =>
             user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             user.email.toLowerCase().includes(searchTerm.toLowerCase())
           ).map(user => (
@@ -496,8 +491,8 @@ const AdminPanel = ({ darkMode, onClose }) => {
                 <div key={index} className="query-item">
                   <span className="query-text">{query.query}</span>
                   <div className="query-bar">
-                    <div 
-                      className="query-fill" 
+                    <div
+                      className="query-fill"
                       style={{ width: `${(query.count / 234) * 100}%` }}
                     ></div>
                   </div>

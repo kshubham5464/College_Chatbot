@@ -4,20 +4,16 @@ import { Lightbulb, ArrowRight, Star, Clock, Users } from 'lucide-react';
 const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [showAll, setShowAll] = useState(false);
-
-  // Get context-aware suggestions based on conversation history
   const getContextualSuggestions = () => {
     if (!messages || messages.length === 0) {
       return getInitialSuggestions();
     }
 
-    const recentMessages = messages.slice(-5); // Last 5 messages
+    const recentMessages = messages.slice(-5);
     const userMessages = recentMessages.filter(msg => msg.sender === 'user');
     const lastUserMessage = userMessages[userMessages.length - 1]?.text?.toLowerCase() || '';
 
     let contextSuggestions = [];
-
-    // Analyze conversation context and suggest follow-up questions
     if (lastUserMessage.includes('admission')) {
       contextSuggestions = [
         { text: "What documents are required for admission?", priority: 'high', icon: <Star size={14} /> },
@@ -61,19 +57,15 @@ const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) 
         { text: "Are there study rooms in the library?", priority: 'medium', icon: <Users size={14} /> }
       ];
     } else {
-      // If no specific context, show user-type specific suggestions
+
       return getUserTypeSpecificSuggestions();
     }
 
     return contextSuggestions;
   };
-
-  // Get initial suggestions when no conversation history
   const getInitialSuggestions = () => {
     return getUserTypeSpecificSuggestions();
   };
-
-  // Get suggestions based on user type
   const getUserTypeSpecificSuggestions = () => {
     const suggestions = {
       student: [
@@ -104,14 +96,10 @@ const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) 
 
     return suggestions[userType?.type] || suggestions.visitor;
   };
-
-  // Update suggestions when messages or user type changes
   useEffect(() => {
     const newSuggestions = getContextualSuggestions();
     setSuggestions(newSuggestions);
   }, [messages, userType]);
-
-  // Sort suggestions by priority
   const sortedSuggestions = suggestions.sort((a, b) => {
     const priorityOrder = { high: 3, medium: 2, low: 1 };
     return priorityOrder[b.priority] - priorityOrder[a.priority];
@@ -127,7 +115,7 @@ const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) 
         <Lightbulb size={16} />
         <span>Suggested Questions</span>
       </div>
-      
+
       <div className="suggestions-list">
         {displaySuggestions.map((suggestion, index) => (
           <button
@@ -152,7 +140,7 @@ const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) 
       </div>
 
       {suggestions.length > 3 && (
-        <button 
+        <button
           className="show-more-btn"
           onClick={() => setShowAll(!showAll)}
         >

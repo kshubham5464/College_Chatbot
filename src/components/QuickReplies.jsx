@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Clock, Star, HelpCircle } from 'lucide-react';
 
 const QuickReplies = ({ userType, onQuickReply, darkMode, recentQueries = [] }) => {
-  // Get quick reply suggestions based on user type
+
   const getQuickReplies = () => {
     const baseReplies = {
       student: [
@@ -33,15 +33,11 @@ const QuickReplies = ({ userType, onQuickReply, darkMode, recentQueries = [] }) 
 
     return baseReplies[userType?.type] || baseReplies.visitor;
   };
-
-  // Get contextual suggestions based on recent queries
   const getContextualSuggestions = () => {
     if (!recentQueries.length) return [];
 
     const suggestions = [];
     const lastQuery = recentQueries[recentQueries.length - 1]?.toLowerCase() || '';
-
-    // Context-aware follow-up suggestions
     if (lastQuery.includes('admission')) {
       suggestions.push(
         { text: "What documents are required?", icon: <HelpCircle size={14} />, category: "followup" },

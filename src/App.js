@@ -12,7 +12,7 @@ function App() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
   
-  // Check for saved preferences
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('darkMode');
     const savedFloatingMode = localStorage.getItem('floatingMode');
@@ -29,7 +29,7 @@ function App() {
     }
   }, []);
 
-  // Save preferences
+
   useEffect(() => {
     localStorage.setItem('floatingMode', isFloatingMode);
   }, [isFloatingMode]);
@@ -38,7 +38,7 @@ function App() {
     localStorage.setItem('fullscreenMode', isFullscreen);
   }, [isFullscreen]);
 
-  // Admin access key combination (Ctrl + Shift + A)
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'A') {
@@ -74,7 +74,7 @@ function App() {
     }
   };
 
-  // Regular embedded mode
+
   if (!isFloatingMode && !isFullscreen) {
     return (
       <div className={`App ${darkMode ? 'dark-theme' : ''}`}>
@@ -160,7 +160,7 @@ function App() {
     );
   }
 
-  // Fullscreen mode
+
   if (isFullscreen) {
     return (
       <div className={`App fullscreen-mode ${darkMode ? 'dark-theme' : ''}`}>
@@ -207,7 +207,7 @@ function App() {
     );
   }
 
-  // Floating widget mode
+
   return (
     <div className={`App floating-widget-mode ${darkMode ? 'dark-theme' : ''}`}>
       {/* Main page content (simulated) */}

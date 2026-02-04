@@ -454,9 +454,6 @@ h2 {
 .input-box button:hover {
   background: #0b5ed7;
 }
-/* *{
-  background-color: rgb(10, 10, 58);
-} */
 .chatbot-logo {
   width: 30px;
   height: 30px;
@@ -657,7 +654,6 @@ body.dark-theme {
   text-align: right;
   margin-top: 4px;
 }
-* Expandable/Collapsible Chat Window */
 .chatbot.collapsed {
   height: 60px;
   overflow: hidden;

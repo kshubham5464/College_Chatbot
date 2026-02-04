@@ -23,8 +23,6 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
   const [editingMessage, setEditingMessage] = useState(null);
   const [userType, setUserType] = useState(null);
   const [showUserTypeSelector, setShowUserTypeSelector] = useState(false);
-  
-  // Helper function to get icon by name
   const getIconByName = (iconName) => {
     switch (iconName) {
       case 'GraduationCap':
@@ -37,8 +35,6 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
         return <User size={16} />;
     }
   };
-  
-  // Voice function (TTS)
   const speak = (text) => {
     const synth = window.speechSynthesis;
     const utter = new SpeechSynthesisUtterance(text);
@@ -49,30 +45,26 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
     utter.voice = voices.find((v) => v.name.includes('Google')) || voices[0];
     synth.speak(utter);
   };
-  
-  // Sync with parent dark mode
   useEffect(() => {
     if (propDarkMode !== undefined) {
       setDarkMode(propDarkMode);
     }
   }, [propDarkMode]);
-
-  // Load from localStorage on mount
   useEffect(() => {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages'));
     const savedUserType = localStorage.getItem('userType');
-    
+
     if (savedUserType) {
       const parsedUserType = JSON.parse(savedUserType);
       setUserType(parsedUserType);
     }
-    
+
     if (storedMessages && storedMessages.length > 0 && savedUserType) {
       setMessages(storedMessages);
     } else if (savedUserType) {
       const parsedUserType = JSON.parse(savedUserType);
-      setMessages([{ 
-        id: Date.now(), 
+      setMessages([{
+        id: Date.now(),
         sender: 'bot',
         text: parsedUserType.greeting,
         timestamp: new Date().toISOString()
@@ -80,60 +72,48 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
     } else {
       setShowUserTypeSelector(true);
     }
-    
-    // Load other preferences from localStorage
     const savedTheme = localStorage.getItem('darkMode');
     if (savedTheme && propDarkMode === undefined) {
       setDarkMode(savedTheme === 'true');
     }
-    
+
     const savedBubbleColors = localStorage.getItem('bubbleColors');
     if (savedBubbleColors) {
       setBubbleColor(JSON.parse(savedBubbleColors));
     }
-    
+
     const savedTypingSpeed = localStorage.getItem('typingSpeed');
     if (savedTypingSpeed) {
       setTypingSpeed(savedTypingSpeed);
     }
   }, [propDarkMode]);
-
-  // Save messages to localStorage on every update
   useEffect(() => {
     localStorage.setItem('chatMessages', JSON.stringify(messages));
   }, [messages]);
-  
-  // Apply theme when darkMode changes
   useEffect(() => {
     if (propSetDarkMode) {
       propSetDarkMode(darkMode);
     } else {
       localStorage.setItem('darkMode', darkMode);
     }
-    
+
     if (darkMode) {
       document.body.classList.add('dark-theme');
     } else {
       document.body.classList.remove('dark-theme');
     }
   }, [darkMode, propSetDarkMode]);
-  
-  // Save bubble colors when they change
   useEffect(() => {
     localStorage.setItem('bubbleColors', JSON.stringify(bubbleColor));
   }, [bubbleColor]);
-  
-  // Save typing speed when it changes
   useEffect(() => {
     localStorage.setItem('typingSpeed', typingSpeed);
   }, [typingSpeed]);
 
   const handleSendMessage = async (userInput) => {
     if (userInput.trim() === '') return;
-    
-    // If we're editing a message, update it instead of sending a new one
     if (editingMessage) {
-      const updatedMessages = messages.map(msg => 
+      const updatedMessages = messages.map(msg =>
         msg.id === editingMessage.id ? {...msg, text: userInput} : msg
       );
       setMessages(updatedMessages);
@@ -141,68 +121,58 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
       return;
     }
 
-    const userMessage = { 
-      id: Date.now(), 
-      sender: 'user', 
+    const userMessage = {
+      id: Date.now(),
+      sender: 'user',
       text: userInput,
       timestamp: new Date().toISOString()
     };
-    
+
     setMessages(prevMessages => [...prevMessages, userMessage]);
     setLoading(true);
 
     try {
-      // Get bot response with user type context
+
       const botResponse = getBotResponse(userInput, userType);
-      
-      // Simulate variable typing time based on message length and selected speed
       const typingDelayPerChar = {
         slow: 100,
         medium: 50,
         fast: 20
       }[typingSpeed];
-      
+
       const typingDelay = Math.min(
-        Math.max(botResponse.length * typingDelayPerChar, 500), // Min 500ms
-        5000 // Max 5 seconds
+        Math.max(botResponse.length * typingDelayPerChar, 500),
+        5000
       );
-      
-      // Wait for the calculated typing delay
       await new Promise(resolve => setTimeout(resolve, typingDelay));
-      
-      const botMessage = { 
-        id: Date.now() + 1, 
-        sender: 'bot', 
+
+      const botMessage = {
+        id: Date.now() + 1,
+        sender: 'bot',
         text: botResponse,
         timestamp: new Date().toISOString()
       };
 
       setMessages(prevMessages => [...prevMessages, botMessage]);
-
-      // Only speak if mic was used
       if (voiceTriggeredRef.current) {
         speak(botResponse);
-        voiceTriggeredRef.current = false; // reset
+        voiceTriggeredRef.current = false;
       }
     } catch (error) {
       console.error('Error:', error);
-      
-      // Show error message to user
-      const errorMessage = { 
-        id: Date.now() + 1, 
-        sender: 'bot', 
+      const errorMessage = {
+        id: Date.now() + 1,
+        sender: 'bot',
         text: `Sorry, I encountered an error while processing your request. ${getFallbackErrorMessage(userType?.type)}`,
         timestamp: new Date().toISOString(),
         isError: true
       };
-      
+
       setMessages(prevMessages => [...prevMessages, errorMessage]);
     } finally {
       setLoading(false);
     }
   };
-
-  // Helper function for error messages
   const getFallbackErrorMessage = (userTypeString) => {
     switch (userTypeString) {
       case 'student':
@@ -219,9 +189,9 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
   const handleClearChat = () => {
     localStorage.removeItem('chatMessages');
     const greeting = userType ? userType.greeting : 'Hello, how can I assist you?';
-    setMessages([{ 
-      id: Date.now(), 
-      sender: 'bot', 
+    setMessages([{
+      id: Date.now(),
+      sender: 'bot',
       text: greeting,
       timestamp: new Date().toISOString()
     }]);
@@ -231,10 +201,8 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
     setUserType(selectedUserType);
     localStorage.setItem('userType', JSON.stringify(selectedUserType));
     setShowUserTypeSelector(false);
-    
-    // Set initial greeting message
-    setMessages([{ 
-      id: Date.now(), 
+    setMessages([{
+      id: Date.now(),
       sender: 'bot',
       text: selectedUserType.greeting,
       timestamp: new Date().toISOString()
@@ -244,45 +212,31 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
   const handleChangeUserType = () => {
     setShowUserTypeSelector(true);
   };
-  
-  // Toggle dark mode
   const toggleDarkMode = () => {
     setDarkMode(prev => !prev);
   };
-  
-  // Toggle collapsed state
   const toggleCollapse = () => {
     setIsCollapsed(prev => !prev);
     if (showSettings) setShowSettings(false);
   };
-  
-  // Toggle settings panel
   const toggleSettings = () => {
     setShowSettings(prev => !prev);
   };
-  
-  // Handle color change
   const handleColorChange = (role, color) => {
     setBubbleColor(prev => ({
       ...prev,
       [role]: color
     }));
   };
-  
-  // Remove the handleReaction function since it's no longer used
-  
-  // Start editing a message
   const handleEditMessage = (message) => {
     if (message.sender === 'user') {
       setEditingMessage(message);
     }
   };
-
-  // Show user type selector if no user type is selected
   if (showUserTypeSelector) {
     return (
       <div className={`chatbot user-type-selection ${darkMode ? 'dark-theme' : ''} ${isFloatingMode ? 'floating-mode' : ''} ${isFullscreen ? 'fullscreen-mode' : ''}`}>
-        <UserTypeSelector 
+        <UserTypeSelector
           onSelectUserType={handleUserTypeSelect}
           darkMode={darkMode}
         />
@@ -295,7 +249,7 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
       {!isFloatingMode && (
         <div className="chatbot-header">
           <div className="header-left">
-            <AnimatedAvatar 
+            <AnimatedAvatar
               isTyping={loading}
               userType={userType?.type || 'visitor'}
               darkMode={darkMode}
@@ -305,7 +259,7 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
               <span className="user-type-badge">{userType?.label || 'Visitor'}</span>
             </div>
           </div>
-          
+
           <div className="header-buttons">
             <button onClick={handleChangeUserType} className="user-type-btn" aria-label="Change user type">
               <User size={18} />
@@ -325,11 +279,11 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
           </div>
         </div>
       )}
-      
+
       {showSettings && (
         <div className={`settings-panel ${darkMode ? 'dark-theme' : ''}`}>
           <h3>Customize Chat</h3>
-          
+
           <div className="user-type-setting">
             <label>Current Mode:</label>
             <div className="current-user-type">
@@ -341,30 +295,30 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
               </button>
             </div>
           </div>
-          
+
           <div className="color-settings">
             <div className="color-option">
               <label>Your Messages:</label>
-              <input 
-                type="color" 
-                value={darkMode ? bubbleColor.userDark : bubbleColor.user} 
-                onChange={(e) => handleColorChange(darkMode ? 'userDark' : 'user', e.target.value)} 
+              <input
+                type="color"
+                value={darkMode ? bubbleColor.userDark : bubbleColor.user}
+                onChange={(e) => handleColorChange(darkMode ? 'userDark' : 'user', e.target.value)}
               />
             </div>
             <div className="color-option">
               <label>Bot Messages:</label>
-              <input 
-                type="color" 
-                value={darkMode ? bubbleColor.botDark : bubbleColor.bot} 
-                onChange={(e) => handleColorChange(darkMode ? 'botDark' : 'bot', e.target.value)} 
+              <input
+                type="color"
+                value={darkMode ? bubbleColor.botDark : bubbleColor.bot}
+                onChange={(e) => handleColorChange(darkMode ? 'botDark' : 'bot', e.target.value)}
               />
             </div>
           </div>
-          
+
           <div className="typing-speed-setting">
             <label>Typing Speed:</label>
-            <select 
-              value={typingSpeed} 
+            <select
+              value={typingSpeed}
               onChange={(e) => setTypingSpeed(e.target.value)}
             >
               <option value="slow">Slow</option>
@@ -377,10 +331,10 @@ const Chatbot = ({ darkMode: propDarkMode, setDarkMode: propSetDarkMode, isFloat
 
       {!isCollapsed && (
         <>
-          <ChatWindow 
-            messages={messages} 
-            loading={loading} 
-            darkMode={darkMode} 
+          <ChatWindow
+            messages={messages}
+            loading={loading}
+            darkMode={darkMode}
             bubbleColor={bubbleColor}
             onEditMessage={handleEditMessage}
             typingSpeed={typingSpeed}

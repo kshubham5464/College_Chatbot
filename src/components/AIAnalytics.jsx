@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Brain, 
-  TrendingUp, 
-  MessageSquare, 
-  Heart, 
-  Target, 
+import {
+  Brain,
+  TrendingUp,
+  MessageSquare,
+  Heart,
+  Target,
   BarChart3,
   AlertTriangle,
   CheckCircle,
@@ -28,7 +28,7 @@ const AIAnalytics = ({ darkMode, messages = [], aiAnalytics = null }) => {
   });
 
   useEffect(() => {
-    // Simulate AI analytics data if not provided
+
     if (!aiAnalytics) {
       generateMockAnalytics();
     } else {
@@ -224,8 +224,8 @@ const AIAnalytics = ({ darkMode, messages = [], aiAnalytics = null }) => {
               </div>
               <div className="intent-metrics">
                 <div className="intent-bar">
-                  <div 
-                    className="intent-fill" 
+                  <div
+                    className="intent-fill"
                     style={{ width: `${(intent.count / 45) * 100}%` }}
                   ></div>
                 </div>

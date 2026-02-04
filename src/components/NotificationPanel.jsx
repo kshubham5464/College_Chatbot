@@ -8,10 +8,8 @@ const NotificationPanel = () => {
   const [settings, setSettings] = useState(notificationService.getSettings());
 
   useEffect(() => {
-    // Load initial notifications
-    setNotifications(notificationService.getNotifications());
 
-    // Subscribe to notification events
+    setNotifications(notificationService.getNotifications());
     const handleNotification = (event) => {
       setNotifications(prev => [...prev, event.detail]);
     };
@@ -38,7 +36,7 @@ const NotificationPanel = () => {
   const handleRequestPermission = async () => {
     const granted = await notificationService.requestPermission();
     setSettings(notificationService.getSettings());
-    
+
     if (granted) {
       notificationService.showSuccessNotification('Notifications enabled!');
     }
@@ -68,7 +66,7 @@ const NotificationPanel = () => {
 
   return (
     <div className="notification-panel">
-      <button 
+      <button
         className="notification-toggle"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle notifications"
@@ -85,7 +83,7 @@ const NotificationPanel = () => {
             <h3>Notifications</h3>
             <div className="notification-actions">
               {notifications.length > 0 && (
-                <button 
+                <button
                   className="clear-all-btn"
                   onClick={handleClearAll}
                   title="Clear all notifications"
@@ -93,7 +91,7 @@ const NotificationPanel = () => {
                   Clear All
                 </button>
               )}
-              <button 
+              <button
                 className="close-btn"
                 onClick={() => setIsOpen(false)}
                 title="Close"
@@ -109,7 +107,7 @@ const NotificationPanel = () => {
               {settings.permission === 'granted' ? (
                 <span className="status enabled">✅ Enabled</span>
               ) : (
-                <button 
+                <button
                   className="enable-btn"
                   onClick={handleRequestPermission}
                 >
@@ -126,8 +124,8 @@ const NotificationPanel = () => {
               </div>
             ) : (
               notifications.map(notification => (
-                <div 
-                  key={notification.id} 
+                <div
+                  key={notification.id}
                   className={getNotificationClass(notification.type)}
                 >
                   <div className="notification-content">
@@ -141,7 +139,7 @@ const NotificationPanel = () => {
                       </small>
                     </div>
                   </div>
-                  <button 
+                  <button
                     className="remove-btn"
                     onClick={() => handleRemoveNotification(notification.id)}
                     title="Remove notification"

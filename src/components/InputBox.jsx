@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Mic, Send, X } from "lucide-react";
 
-const InputBox = ({ 
-  onSend, 
-  disabled, 
-  voiceTriggeredRef, 
-  darkMode, 
+const InputBox = ({
+  onSend,
+  disabled,
+  voiceTriggeredRef,
+  darkMode,
   editingMessage,
   onCancelEdit,
   isFloatingMode,
@@ -14,8 +14,6 @@ const InputBox = ({
   const [input, setInput] = useState("");
   const [listening, setListening] = useState(false);
   const inputRef = useRef();
-  
-  // Update input when editing a message
   useEffect(() => {
     if (editingMessage) {
       setInput(editingMessage.text);
@@ -32,8 +30,6 @@ const InputBox = ({
       setInput("");
     }
   };
-
-  // Handle input change
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInput(value);
@@ -43,8 +39,6 @@ const InputBox = ({
     if (e.key === "Enter") handleSend();
     if (e.key === "Escape" && editingMessage) onCancelEdit();
   };
-
-  // 🎤 Voice-to-Text Handler with Auto-Submit
   const handleVoiceInput = () => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -62,15 +56,13 @@ const InputBox = ({
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       setInput(transcript);
-
-      // ✅ Wait for input to update before sending
       setTimeout(() => {
         if (transcript.trim() !== "") {
-          voiceTriggeredRef.current = true; // Mark mic used
-          onSend(transcript.trim()); // Auto-send
+          voiceTriggeredRef.current = true;
+          onSend(transcript.trim());
           setInput("");
         }
-      }, 200); // Wait a bit to ensure `setInput` completes
+      }, 200);
     };
 
     recognition.onerror = (event) => {
@@ -84,8 +76,6 @@ const InputBox = ({
 
     recognition.start();
   };
-
-  // 🎯 Auto focus and type on any key press
   useEffect(() => {
     const handleGlobalKey = (e) => {
       const isInputFocused = document.activeElement === inputRef.current;
@@ -112,8 +102,8 @@ const InputBox = ({
       {editingMessage && (
         <div className="editing-indicator">
           <span>Editing message</span>
-          <button 
-            onClick={onCancelEdit} 
+          <button
+            onClick={onCancelEdit}
             className="cancel-edit-btn"
             title="Cancel editing"
           >
@@ -121,7 +111,7 @@ const InputBox = ({
           </button>
         </div>
       )}
-      
+
       <input
         ref={inputRef}
         type="text"

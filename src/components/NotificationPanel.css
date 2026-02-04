@@ -211,8 +211,6 @@
   opacity: 1;
   color: #dc3545;
 }
-
-/* Notification type styles */
 .notification-success {
   border-left: 3px solid #28a745;
 }
@@ -228,8 +226,6 @@
 .notification-info {
   border-left: 3px solid #17a2b8;
 }
-
-/* Responsive design */
 @media (max-width: 480px) {
   .notification-dropdown {
     width: 300px;
@@ -243,8 +239,6 @@
     right: -70px;
   }
 }
-
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .notification-dropdown {
     background-color: #2c3e50;

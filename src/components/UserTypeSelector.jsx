@@ -48,7 +48,7 @@ const UserTypeSelector = ({ onSelectUserType, darkMode }) => {
         <h3>Welcome! How can I assist you today?</h3>
         <p>Please select your role to get personalized assistance:</p>
       </div>
-      
+
       <div className="user-type-grid">
         {userTypes.map((userType) => (
           <div
@@ -65,7 +65,7 @@ const UserTypeSelector = ({ onSelectUserType, darkMode }) => {
           </div>
         ))}
       </div>
-      
+
       <div className="selector-footer">
         <small>You can change this anytime in settings</small>
       </div>
