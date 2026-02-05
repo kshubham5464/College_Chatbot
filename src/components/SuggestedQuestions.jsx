@@ -96,8 +96,8 @@ const SuggestedQuestions = ({ userType, messages, onQuestionSelect, darkMode }) 
   }, [messages, getUserTypeSpecificSuggestions]);
 
   useEffect(() => {
-    setSuggestions(getContextualSuggestions());
-  }, [messages, userType]);
+  setSuggestions(getContextualSuggestions());
+}, [getContextualSuggestions]);
 
   const sortedSuggestions = useMemo(() => {
     const priorityOrder = { high: 3, medium: 2, low: 1 };
